@@ -8,6 +8,7 @@ import { CharactersCardComponent } from './characters-card.component';
   declarations: [CharactersCardComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [CharactersCardComponent]
 })
 export class CharactersCardModule { }

@@ -22,10 +22,12 @@ a {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   height: 500px;
   margin: 0 auto;
 }
+
+
 
 
 section {
@@ -279,6 +281,15 @@ nav {
   }
 }
 
+/***  CHARACTER LIST ***/
+
+  section.character__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
 
 /*** SHARED ***/
 .center {
@@ -315,6 +326,13 @@ nav {
 
 
 /*** EPISODES ***/
+
+.episodes__container{
+  width: 70%;
+  height: 500px;
+  margin: 0 auto;
+
+}
 
 ul.episodes__list {
   counter-reset: gradient-counter;
@@ -374,8 +392,10 @@ ul.episodes__list {
 .card {
   margin: 10px;
   border: 5px solid transparent;
+  
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   max-width: 350px;
+  height: auto;
   transition: all 0.6s;
   border-radius: 0.5rem;
   cursor: pointer;
@@ -389,7 +409,7 @@ ul.episodes__list {
     li {
       padding: .4rem 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       color: #09cdce;
 
       .table__label {
@@ -446,12 +466,28 @@ ul.episodes__list {
   }
 }
 
+/*** About  ***/
+.about__link{
+ display: inline-block;
+  color: #fff;
+  transition: all ease-in-out 0.5s;
+
+}
+
+.about__link:hover{
+
+  color: white;
+  transform: scale(1.2);
+  transition: all ease-in-out 0.5s;
+
+}
+
 
 /*** Media queries 500 px ***/
 
 @media screen and (max-width: 500px) {
   .container {
-    width: 100%;
+    width: 90%;
   }
 
   /* Card */

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '@app/shared/services/data.service';
 
 @Component({
@@ -7,6 +7,7 @@ import { DataService } from '@app/shared/services/data.service';
   styleUrls: ['./characters-list.component.scss']
 })
 export class CharactersListComponent implements OnInit {
+ 
 
   characters$ = this.dataService.characters$;
 
