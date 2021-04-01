@@ -15,7 +15,7 @@ export class CharactersListComponent implements OnInit {
 
   characters$ = this.dataService.characters$;
   showButton =false;
-  private page= 2;
+  private pageNum= 2;
   private scrollHeight=500;
 
   constructor ( @Inject(DOCUMENT) private document : Document,private dataService: DataService,private localStorageService : LocalStorageService) { }
@@ -40,8 +40,8 @@ export class CharactersListComponent implements OnInit {
 
       
 
-      this.dataService.getCharacterByPage(this.page);
-      this.page++;
+      this.dataService.getCharacterByPage(this.pageNum);
+      this.pageNum++;
       
 
     }
