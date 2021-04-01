@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Character } from '@shared/interfaces/data.interface';
+import {ToastrService} from 'ngx-toastr';
 
 const MY_FAVORITES = 'myFavorites';
 
@@ -16,7 +17,7 @@ export class LocalStorageService{
 
 
 
-        constructor(){
+        constructor(private toastService: ToastrService){
             this.initialStorage();
         }
 
@@ -28,9 +29,14 @@ export class LocalStorageService{
 
                 localStorage.setItem(MY_FAVORITES,JSON.stringify([...currentsFavorites, character]));
                 this.charactersFavoritesSubject.next([...currentsFavorites, character]);
+
+                this.toastService.success(`${character.name} agregado a favoritos`, 'RickAndMortyAPP');
+
+                this
                     
                 } catch (error) {
                     console.log('Error saving favorites from local storage', error);
+                    this.toastService.error(`${character.name} error al agregar a favoritos`, 'RickAndMortyAPP');
                     alert(error);
                 }
         }
@@ -46,10 +52,12 @@ export class LocalStorageService{
                 localStorage.setItem(MY_FAVORITES,JSON.stringify([...characterFiltered]));
 
                 this.charactersFavoritesSubject.next([...characterFiltered]);
+                this.toastService.warning(`Se ha eliminado de favoritos`, 'RickAndMortyAPP');
                 
             } catch (error) {
 
                 console.log('Error removing favorites from local storage', error);
+                this.toastService.error(` error al remover a favoritos ${error} `, 'RickAndMortyAPP');
                 alert(error);
                 
             }
