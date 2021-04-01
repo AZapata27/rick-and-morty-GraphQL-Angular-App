@@ -1,1 +1,4 @@
-<p>home works!</p>
+<section class="character__list">
+
+    <app-characters-card *ngFor="let character of charactersFavorites$ | async" [character]="character"></app-characters-card>
+</section>
