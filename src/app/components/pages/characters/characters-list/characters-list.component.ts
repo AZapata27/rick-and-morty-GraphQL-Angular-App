@@ -7,6 +7,7 @@ import { LocalStorageService } from '@app/shared/services/localStorage.service';
 @Component({
   selector: 'app-characters-list',
   templateUrl: './characters-list.component.html',
+  
   styleUrls: ['./characters-list.component.scss']
 })
 export class CharactersListComponent implements OnInit {
@@ -14,6 +15,7 @@ export class CharactersListComponent implements OnInit {
 
   characters$ = this.dataService.characters$;
   showButton =false;
+  private page= 2;
   private scrollHeight=500;
 
   constructor ( @Inject(DOCUMENT) private document : Document,private dataService: DataService,private localStorageService : LocalStorageService) { }
@@ -36,7 +38,10 @@ export class CharactersListComponent implements OnInit {
 
     onScrollDown():void{
 
-      console.log('hey');
+      
+
+      this.dataService.getCharacterByPage(this.page);
+      this.page++;
       
 
     }
