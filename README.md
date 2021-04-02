@@ -1,8 +1,18 @@
 App Spa desarrollada con Angular 11 que consume de una Api GraphQL de rick and morty. implementa RxJs como paradigma reactivo
 
 
-## INSTALL AND RUN
+# Installation
+First install dependencies
+```shell
+npm install
+```
 
-Run `npm i -y`
+To run the example in development mode
+```shell
+npm start
+```
 
-Run `ng serve`
+To build the project
+```shell
+npm run build
+```
