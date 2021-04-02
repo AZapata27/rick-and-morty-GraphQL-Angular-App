@@ -3,4 +3,6 @@ App Spa desarrollada con Angular 11 que consume de una Api GraphQL de rick and m
 
 ## INSTALL AND RUN
 
-Run `npm i -y` - `ng serve`
+Run `npm i -y`
+
+Run `ng serve`
