@@ -7,12 +7,12 @@ First install dependencies
 npm install
 ```
 
-To run the example in development mode
+To run the example in development mode in http://localhost:46000/
 ```shell
-npm start
+ng serve
 ```
 
 To build the project
 ```shell
-npm run build
+ng run build
 ```
